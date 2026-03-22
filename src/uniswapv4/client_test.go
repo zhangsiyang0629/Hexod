@@ -39,7 +39,7 @@ func TestSwapCheck(t *testing.T) {
 	tokenAddr := "0x02b3d7aad00aefdb8f3fe1d5e3fdb7ed78cc41a3"
 	senderAddr := "0x599Cbb31cD468Df8022502e69710b01cCf53EfA4"
 	cli := NewClient(rpcUrl, V4CliConfig{PollAddr: addr, ChainID: 11155111})
-	err := cli.SwapCheck("24554b3e74e003207cf94ffeb1542a9484b96b8833e6a30e128ef38c95514311", tokenAddr, senderAddr)
+	err := cli.SwapCheck("", tokenAddr, senderAddr)
 	if err != nil {
 		t.Error(err)
 	}
@@ -58,7 +58,7 @@ func TestSwap(t *testing.T) {
 		TickSpacing: big.NewInt(30),
 		Hooks:       common.Address{},
 	}
-	err := cli.Swap("24554b3e74e003207cf94ffeb1542a9484b96b8833e6a30e128ef38c95514311", key, true,
+	err := cli.Swap("", key, true,
 		tokenAddr0, tokenAddr1, 1)
 	if err != nil {
 		t.Error(err)
